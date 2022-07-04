@@ -7,17 +7,24 @@ to submit Trade Requests to the server and confirm that there is a trade avalibl
 The Makefile can be used to run commands related to the building and running of this application. Avalible commands are desribed below: 
 
 `make gen` - Generate the protobuf stubs for the client and server. 
+
 `make clean` - remove the protobuf stubs from the code base. 
+
 `make server` - Run the server side of the global trade system.
+
 `make client` - Run the client side of the global trade system.
+
 `make install` - Install all the required files.
+
 `make test` - Run the unit test suite for the application.
 
 ## Docker
 The application is equiped with it's own dockerfiles for running the client and server inside of a docker container. 
 
 ### Building docker image
+
 To build a server image run: `docker build -f server.Dockerfile . -t gts-server`
+
 To build a client image run: `docker build -f client.Dockerfile . -t gts-client`
 
 ## Testing
