@@ -1,0 +1,32 @@
+// The Global Trade System Protocol Buffer Definition
+
+syntax= "proto3";
+package globalTradeSystem;
+
+option go_package = "github.com/bccorb/gts";
+
+// The Global Trade System Service
+service GlobalTradeSystem {
+    // Get all avaliable matching trades
+    rpc GetTradeList (stream TradeRequest) returns (stream TradeResponse) {}
+}
+
+// Trade Request Messages
+message TradeRequest {
+    string requested_pokemon = 1;
+    string offered_pokemon = 2;
+    optional int32 min_lvl = 3;
+    optional int32 max_lvl = 4;
+}
+
+// Trade Response Messages
+message TradeResponse {
+    string requested_pokemon = 1;
+    string offered_pokemon = 2;
+    int32 lvl = 3;
+}
+
+// No Avaible Trades Messages
+message EmptyResponse {
+    string message = 1;
+}
